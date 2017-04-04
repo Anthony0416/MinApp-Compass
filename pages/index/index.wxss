@@ -1,0 +1,30 @@
+/**index.wxss**/
+.container {
+  background-color: #011b28;
+  font-family: "microsoft yahei";
+}
+.text {
+  color: white;
+  font-size: 26rpx;
+  text-align: center
+}
+.text text{
+  display: block;
+  height: 40rpx;
+  line-height: 40rpx
+}
+.tip-pic {
+  width: 750rpx;
+  height: 375rpx;
+  position: absolute;
+  left: 0;
+}
+.tip-btn {
+  position: absolute;
+  left: 0;
+  width: 650rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 50rpx;
+  font-size: 30rpx
+}
