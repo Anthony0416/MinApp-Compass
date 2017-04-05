@@ -1,6 +1,10 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="*this">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="container" style="height: {{height}}">
+  <view class="text">
+    <text>{{direction}}</text>
+    <text>{{angle}}°</text>
+  </view>
+  <view class="pic">
+    <image src="../../images/compass.png" style="transform: rotate({{rotate}}deg);"></image>
+  </view>
 </view>
