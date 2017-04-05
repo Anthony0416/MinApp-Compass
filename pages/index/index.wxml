@@ -5,5 +5,5 @@
     <text>并按下图所示校准指南针</text>
   </view>
   <image class="tip-pic" src="../../images/tip.jpg" style="top: {{pic}}"></image>
-  <button class="tip-btn" style="top: {{btn}}">确认</button>
+  <button class="tip-btn" style="top: {{btn}}" bindtap="jump">确认</button>
 </view>

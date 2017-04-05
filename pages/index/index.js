@@ -6,20 +6,23 @@ Page({
     height: '',
     text: '',
     pic: '',
-    btn: ''
+    btn: '',
   },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+  jump: function() {
+    wx.redirectTo({
+      url: '../compass/compass'
     })
   },
   onLoad: function () {
-    wx.onCompassChange(function (res) {
-      console.log(res.direction)
-    })
     var res = wx.getSystemInfoSync()
-    var h = res.screenHeight - 71;
+    var h
+    console.log(res.model.substring(0,6) == 'iPhone')
+    if (res.model.substring(0,6) == 'iPhone') {
+      h = res.screenHeight - 64;
+    } else {
+      h = res.screenHeight - 71;
+    }
     this.setData({
       height: h + "px",
       text: h/4 - 60 + "px",
