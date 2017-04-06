@@ -1,29 +1,33 @@
 //logs.js
 Page({
   data: {
-    height: '',
     direction: '北',
-    angle: '90',
+    angle: '0',
     rotate: ''
   },
   //事件处理函数
   onLoad: function () {
-    // 高度兼容处理
-    var res = wx.getSystemInfoSync();
-    var h;
-    if (res.model.substring(0,6) == 'iPhone') {
-      h = res.screenHeight - 64;
-    } else {
-      h = res.screenHeight - 71;
-    };
-    this.setData({
-      height: h + "px",
-    })
     // 罗盘Api
     var that = this;
+    wx.startCompass({
+      success: function(res) {
+        console.log(res)
+      },
+      fail: function(res) {
+        console.log(res)
+      }
+    })
     wx.onCompassChange(function (res) {
+      // 保留两位小数
       var directions = res.direction.toFixed(2);
-      console.log(directions)
+      console.log(directions == undefined);
+      if(directions == '') {
+        wx.showToast({
+          title: '您的手机没有电子罗盘或被禁用',
+          icon: 'warn',
+          duration: 2000
+        })
+      }
       that.setData({
         angle: directions,
         rotate: 360 - directions,

@@ -1,5 +1,5 @@
 <!--logs.wxml-->
-<view class="container" style="height: {{height}}">
+<view class="container">
   <view class="text">
     <text>{{direction}}</text>
     <text>{{angle}}°</text>
