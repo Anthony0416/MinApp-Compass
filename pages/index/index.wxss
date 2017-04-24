@@ -5,8 +5,9 @@
 }
 .text {
   color: white;
-  font-size: 26rpx;
-  text-align: center
+  font-size: 30rpx;
+  text-align: center;
+  padding: 60rpx 0 0;
 }
 .text text{
   display: block;
@@ -18,6 +19,8 @@
   height: 375rpx;
   position: absolute;
   left: 0;
+  top: 50%;
+  margin: -188rpx 0 0
 }
 .tip-btn {
   position: absolute;
@@ -26,5 +29,17 @@
   height: 80rpx;
   line-height: 80rpx;
   margin: 0 50rpx;
-  font-size: 30rpx
+  font-size: 30rpx;
+  bottom: 20rpx;
+}
+.tip-check {
+  position: absolute;
+  left: 0;
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 275rpx;
+  font-size: 30rpx;
+  bottom: 120rpx;
+  color: white
 }

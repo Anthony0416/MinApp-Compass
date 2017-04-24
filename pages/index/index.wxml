@@ -1,9 +1,12 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="text" style="padding-top: {{text}}">
+  <view class="text">
     <text>请您远离磁场干扰源</text>
     <text>并按下图所示校准指南针</text>
   </view>
-  <image class="tip-pic" src="../../images/tip.jpg" style="top: {{pic}}"></image>
-  <button class="tip-btn" style="top: {{btn}}" bindtap="jump">我知道了</button>
+  <image class="tip-pic" src="../../images/tip.jpg"></image>
+  <checkbox-group class="tip-check" bindchange="checkBox">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </checkbox-group>
+  <button class="tip-btn" bindtap="jump">我知道了</button>
 </view>

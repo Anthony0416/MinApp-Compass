@@ -3,9 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    text: '',
-    pic: '',
-    btn: '',
+    item: {name: 'check', value: '不再提醒', checked: false},
   },
   //事件处理函数
   jump: function() {
@@ -13,18 +11,19 @@ Page({
       url: '../compass/compass'
     })
   },
-  onLoad: function () {
-    var res = wx.getSystemInfoSync()
-    var h
-    if (res.model.substring(0,6) == 'iPhone') {
-      h = res.screenHeight - 64;
+  checkBox: function (e) {
+    if(e.detail.value[0]) {
+      wx.setStorageSync('check', 1)
     } else {
-      h = res.screenHeight - 71;
+      wx.setStorageSync('check', 0)
     }
-    this.setData({
-      text: h/4 - 60 + "px",
-      pic: h/2 - 100 + "px",
-      btn: h - 60 + "px"
-    })
+  },
+  onLoad: function () {
+    var check = wx.getStorageSync('check')
+    if(check == 1) {
+      wx.redirectTo({
+        url: '../compass/compass'
+      })
+    }
   }
 })
