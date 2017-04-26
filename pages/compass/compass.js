@@ -3,10 +3,32 @@ Page({
   data: {
     direction: '--',
     angle: '--',
-    rotate: ''
+    rotate: '',
+    backgroundColor: '#011b28',
+    color: '#fff',
+    bulb: '../../images/light.png',
+    compass: '../../images/compass-dark.png'
   },
   //事件处理函数
   onLoad: function () {
+    // 从缓存获取主题颜色，渲染主题
+    var theme = wx.getStorageSync('theme');
+    console.log(theme === 0)
+    if (theme === 0) {
+      this.setData({
+        backgroundColor: '#fff',
+        color: '#000',
+        bulb: '../../images/tip.png',
+        compass: '../../images/compass-light.png'
+      })
+    } else {
+      this.setData({
+        backgroundColor: '#011b28',
+        color: '#fff',
+        bulb: '../../images/light.png',
+        compass: '../../images/compass-dark.png'
+      })
+    }
     // 罗盘Api
     var that = this;
     wx.onCompassChange(function (res) {
@@ -21,7 +43,7 @@ Page({
     });
     // 判断手机是否有陀旋仪
     // 外部检测，如果没有陀旋仪数据，代码不会进入wx.onCompassChange
-    // 必须使用setsetTimeout包裹代码，否则代码立即执行都会弹窗
+    // 必须使用setsetTimeout包裹代码，否则代码立即执行弹窗
     setTimeout(function(){
       if(that.data.direction == '--' && that.data.angle == '--'){
         wx.showToast({
@@ -52,6 +74,31 @@ Page({
         return '正北'
       }
     } 
+  },
+  theme: function () {
+    var that = this;
+    wx.showActionSheet({
+      itemList: ['亮色主题', '暗色主题'],
+      success: function(res) {
+        // res.tapIndex 亮色主题为0，暗色主题为1
+        wx.setStorageSync('theme', res.tapIndex)
+        if (res.tapIndex === 0) {
+          that.setData({
+            backgroundColor: '#fff',
+            color: '#000',
+            bulb: '../../images/tip.png',
+            compass: '../../images/compass-light.png'
+          })
+        } else {
+          that.setData({
+            backgroundColor: '#011b28',
+            color: '#fff',
+            bulb: '../../images/light.png',
+            compass: '../../images/compass-dark.png'
+          })
+        }
+      }
+    })
   },
   // 设置页面分享
   onShareAppMessage: function () {
