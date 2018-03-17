@@ -6,7 +6,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#011b28",
-    "navigationBarTitleText": "指南针",
+    "navigationBarTitleText": "迷你指南针",
     "navigationBarTextStyle":"width"
   }
 }

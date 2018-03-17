@@ -1,5 +1,8 @@
 /**app.wxss**/
-.container {
+page {
+  height:100%;
   background-color: #011b28;
+}
+.container {
   font-family: "microsoft yahei";
 }
