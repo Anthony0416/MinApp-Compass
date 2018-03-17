@@ -4,5 +4,6 @@ page {
   background-color: #011b28;
 }
 .container {
+  background-color: #011b28;
   font-family: "microsoft yahei";
 }
