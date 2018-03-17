@@ -1,6 +1,3 @@
-.container {
-  height: 100%;
-}
 .text {
   text-align: center;
   color: white;
@@ -11,25 +8,13 @@
   display: block;
 }
 
-.tip {
-  position: absolute;
-  top: 20rpx;
-  right: 20rpx;
-  height: 80rpx;
-  width: 80rpx
-}
-.tip image {
-  width: 80rpx;
-  height: 80rpx;
-}
-
 .pic {
   height: 650rpx;
   width: 650rpx;
   position: absolute;
   top: 50%;
   left: 50rpx;
-  margin-top: -300rpx;
+  margin-top: -325rpx;
 }
 .pic image {
   width: 100%;

@@ -1,13 +1,10 @@
 <!--logs.wxml-->
-<view class="container" style="background-color:{{backgroundColor}}">
-  <view class="text" style="color:{{color}}">
+<view class="container">
+  <view class="text">
     <text>{{direction}}</text>
     <text>{{angle}}°</text>
   </view>
-  <view class="tip" bindtap="theme">
-    <image src="{{bulb}}"></image>
-  </view>
   <view class="pic">
-    <image src="{{compass}}" style="transform: rotate({{rotate}}deg);"></image>
+    <image src="../../images/compass.png" style="transform: rotate({{rotate}}deg);"></image>
   </view>
 </view>
