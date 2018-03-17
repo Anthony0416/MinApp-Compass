@@ -1,7 +1,6 @@
 /**index.wxss**/
 .container {
-  background-color: #011b28;
-  font-family: "microsoft yahei";
+  height: 100%;
 }
 .text {
   color: white;
